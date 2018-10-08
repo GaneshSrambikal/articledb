@@ -2,8 +2,7 @@ extend layout
 
 block content
     h1  #{title}
-    ul
+    ul.list-group
         each article, i in articles
-            //- li= "title: " + article.title +", body: " + article.body
-            li= article.body
-            
+            li.list-group-item
+                a(href="/article/"+article._id)= article.title

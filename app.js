@@ -29,7 +29,10 @@ app.set('view engine', 'pug');
 
 //body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+
+//set public folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // home route
 app.get('/', (req, res) => {
@@ -69,6 +72,15 @@ app.get('/', (req, res) => {
 app.get('/articles/add', function (req, res) {
     res.render('add_article', {
         title: 'add article'
+    });
+});
+
+//get single article
+app.get('/article/:id', function (req, res) {
+    Article.findById(req.params.id, function (err, article) {
+        res.render('article', {
+            article: article
+        });
     });
 });
 
