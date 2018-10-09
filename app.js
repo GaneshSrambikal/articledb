@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
         }
         else {
             res.render('index', {
-                title: 'hello',
+                title: 'List of Articles -',
                 articles: articles
             });
         }
