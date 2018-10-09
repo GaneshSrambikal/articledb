@@ -84,6 +84,15 @@ app.get('/article/:id', function (req, res) {
     });
 });
 
+//loading edit form
+app.get('/article/edit/:id', function (req, res) {
+    Article.findById(req.params.id, function (err, article) {
+        res.render('edit_article', {
+            title: 'Edit Article',
+            article: article
+        });
+    });
+});
 
 //add submit route
 app.post('/articles/add', function (req, res) {
@@ -93,6 +102,27 @@ app.post('/articles/add', function (req, res) {
     article.body = req.body.body;
 
     article.save(function (err) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            res.redirect('/');
+        }
+    });
+
+});
+
+//update submit route
+app.post('/articles/edit/:id', function (req, res) {
+    let article = {};
+    article.title = req.body.title;
+    article.author = req.body.author;
+    article.body = req.body.body;
+
+    let query = { _id: req.params.id }
+
+    Article.update(query, article, function (err) {
         if (err) {
             console.log(err);
             return;
