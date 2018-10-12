@@ -27,8 +27,13 @@ html
                 a(href='/articles/add') Add Articles
               
     .container
+            != messages('message', locals)
+            if errors
+              each error, i in errors 
+                div(class="alert alert-danger") #{error.msg}
             block content
             br
+            
             hr
             footer
                 p Copyright &copy; 2018

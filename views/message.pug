@@ -1,0 +1,4 @@
+.messages
+    each type in object.keys(locals.messages)
+        each message in object.values(locals.messages)
+            div(class="alert alert-"+type) #{message}
