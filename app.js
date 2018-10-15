@@ -7,9 +7,10 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const { check, validationResult } = require('express-validator/check');
 const expressMessage = require('express-messages');
+const config = require('./config/database');
+const passport = require('passport');
 
-
-mongoose.connect('mongodb://localhost/nodekb');
+mongoose.connect(config.database);
 let db = mongoose.connection;
 
 //check connection
@@ -74,8 +75,17 @@ app.use(expressValidator({
     }
 }));
 
+//passport config
+require('./config/passport')(passport);
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
-
+//
+app.get('*',function(req,res,next){
+    res.locals.user = req.user || null;
+    next();
+});
 
 
 // home route

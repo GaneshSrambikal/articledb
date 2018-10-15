@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
+const passportLocal = require('passport-local');
 
 //Bring in article model
 let User = require('../models/user');
@@ -66,7 +68,42 @@ router.post('/register', (req, res) => {
 
 });
 
+
+//login form
 router.get('/login', (req, res) => {
+    res.render('login');
+});
+
+//login process
+router.post('/login', (req, res, next) => {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    req.checkBody('username', 'Username is required').notEmpty();
+    req.checkBody('password', 'password is required').notEmpty();
+
+    let errors = req.validationErrors();
+
+    if (errors) {
+        res.render('login', {
+            errors: errors
+        });
+    } else {
+        passport.authenticate('local', {
+            successRedirect: '/',
+            failureRedirect: '/users/login',
+            failureFlash: true,
+
+
+        })(req, res, next);
+        req.flash('success', 'You are registered and can loginIn');
+    }
+
+
+});
+
+//logout
+router.get('/logout', (req, res) => {
     res.render('login');
 });
 
