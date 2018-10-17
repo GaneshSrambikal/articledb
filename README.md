@@ -18,4 +18,5 @@ Following web app is a simple article webApp which can create, read, update and 
 ![Image](https://github.com/GaneshSrambikal/articledb/blob/master/snaps/snap03.png)
   [link](https://github.com/GaneshSrambikal/articledb/tree/master/snaps/)
   
-  Made By ### Ganesh Srambikal
+  Coded By 
+  ### Ganesh Srambikal
