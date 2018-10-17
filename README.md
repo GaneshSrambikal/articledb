@@ -2,12 +2,11 @@
 
 
 ### frontend : Jade, css, javascript ,bootstrap,bower
-### backend  : Node, Express, Mongodb 
+### backend  : Node, Express, Mongodb ,Passport oauth
 
 ### Description :
 
-Following app searches for nearby pets which are available to adopt in the nearby adopt center. This app uses an api from petfinder.com[link](https://www.petfinder.com) ,which in response return data in json format.
-The fetched result shows the pets image , adresses,contactand shelter id.
+Following web app is a simple article webApp which can create, read, update and delete articles. Backend is powered by mongodb and its used mlab to store and retrieve data .It used passport auth to authenticate users ,using local strategy.
 
 ## Some Screenshots of the app
 ![Image](https://github.com/GaneshSrambikal/Pet-Search-web-app/blob/master/ss.png)
