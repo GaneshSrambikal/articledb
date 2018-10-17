@@ -82,7 +82,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //
-app.get('*',function(req,res,next){
+app.get('*', function (req, res, next) {
     res.locals.user = req.user || null;
     next();
 });
@@ -130,5 +130,5 @@ app.use('/articles', articles);
 app.use('/users', users);
 
 app.listen(3000, () => {
-    console.log('server strted ..');
+    console.log('Server Started at Port 3000..');
 });
