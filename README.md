@@ -9,7 +9,7 @@
 Following web app is a simple article webApp which can create, read, update and delete articles. Backend is powered by mongodb and its used mlab(cloud hosted db) to store and retrieve data .It used passport auth to authenticate users ,using local strategy.
 
 ## Some Screenshots of the app
-<a href=""><img src="articlepage.gif" title="article page"/></a>
+<a href=""><img src="articledb/snaps/articlepage.gif" title="article page"/></a>
 <a href="https://imgflip.com/gif/2kao0a"><img src="https://i.imgflip.com/2kao0a.gif" title="made at imgflip.com"/></a>
 ![Image](https://github.com/GaneshSrambikal/articledb/blob/master/snaps/snap01.png)
 ![Image](https://github.com/GaneshSrambikal/articledb/blob/master/snaps/snap02.png)
