@@ -1,12 +1,8 @@
-## Pet Search Web App 
+## Articles Website  
 
 
-### frontend : html, css, javascript ,bootstrap
-### API : petFinder API [link](https://www.petfinder.com/developers/api-key)
-### API Documentation : [link](https://www.petfinder.com/developers/api-docs) 
-
-
-
+### frontend : Jade, css, javascript ,bootstrap,bower
+### backend  : Node, Express, Mongodb 
 
 ### Description :
 
